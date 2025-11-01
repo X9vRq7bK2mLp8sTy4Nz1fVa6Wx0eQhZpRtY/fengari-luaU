@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>prometheus playground</title>
+  <style>
+    body{font-family:system-ui, -apple-system, Roboto, "Segoe UI", Arial; margin:20px; color:#111}
+    textarea{width:100%;height:180px;margin-bottom:8px}
+    select,input,button{margin-right:8px}
+    pre{white-space:pre-wrap;background:#f4f4f4;padding:12px;border-radius:6px}
+  </style>
+</head>
+<body>
+  <h3>prometheus playground</h3>
+  <label>lua version
+    <select id="luaVersion">
+      <option value="Lua51">Lua51</option>
+      <option value="LuaU">LuaU</option>
+    </select>
+  </label>
+
+  <label>preset
+    <select id="preset">
+      <option value="Strong">strong</option>
+      <option value="Medium">medium</option>
+      <option value="Small">weak</option>
+    </select>
+  </label>
+
+  <div>
+    <textarea id="source" placeholder='print("hello")'>print("hello world")</textarea>
+  </div>
+
+  <div>
+    <button id="obf">obfuscate</button>
+    <span id="status"></span>
+  </div>
+
+  <h4>output</h4>
+  <pre id="out"></pre>
+
+  <!-- fengari-web from jsdelivr -->
+  <script src="https://cdn.jsdelivr.net/npm/fengari-web@0.1.4/dist/fengari-web.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
